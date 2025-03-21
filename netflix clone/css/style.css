@@ -1,0 +1,470 @@
+*{
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.container-first {
+    position: relative; /* Для добавления слоев */
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Чтобы ограничить содержимое внутри блока */
+}
+
+.container-first::before {
+    content: ''; /* Псевдоэлемент для фона */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 850px;
+    background: linear-gradient(to bottom, rgba(112, 8, 8, 0.8), rgba(0, 0, 0, 0.5)); /* Градиент от красного к черному */
+    background-position: center;
+    filter: blur(50px); /* Уменьшенное размытие */
+    z-index: -1; /* Размытие будет на заднем фоне */
+    border: none;
+}
+/* Контент поверх размытости */
+.container-first-content {
+    position: relative; /* Это необходимо для нормальной работы с z-index */
+    z-index: 1; /* Все элементы внутри будут поверх фона */
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 150px;
+    height: 100%;
+    
+}
+
+.language-select {
+    background-color: transparent; /* Прозрачный фон */
+    color: white; /* Цвет текста */
+    border: 1px solid white;
+    padding: 15px 20px;
+    border-radius: 25px; /* Закругленные углы */
+   
+}
+option{
+    color: black;
+}
+.sign {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 25px;
+    padding: 15px 20px;
+    text-align: center;
+    display: inline-block; /* Сделать элемент блочным для стилизации */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.sign:hover {
+    background-color: #373434;
+    color: #fff; /* Можно также изменить цвет текста при наведении */
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.header_right_part{
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+.img-content {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    padding: 0 50px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 25px;
+   
+}
+
+
+.img-content img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to left top,#f30a0a 10%,  transparent 30%, transparent 70%, #ffffff 90%);
+    border-image-slice: 1;
+    object-fit: cover;
+    opacity: 0.6;
+    border-radius: 15px;
+    background-color: rgb(190, 176, 176);
+}
+
+.img-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+}
+
+
+ h2{
+    position: absolute;
+    left: 50%; /* Центровка по горизонтали */
+    top: 50%; /* Центровка по вертикали */
+    transform: translate(-50%, -50%); /* Убираем смещение */
+    color: white;
+    text-align: center;
+    font-size: clamp(20px, 5vw, 50px); /* Адаптивный размер текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+   
+    
+}
+.first_parag{
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Текст находится внизу */
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    top: 350px;
+}
+.text-p{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    padding-bottom :15px;
+}
+.container_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom :15px;
+}
+.email-form{
+    background-color: black;
+    border-radius: 25px;
+    padding: 15px 20px;
+    width: 350px;
+    border: 1px solid rgb(150, 146, 146);
+    color: #ffffff;
+}
+.but-form{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 20px;  
+    font-weight: 100;
+}
+.trend{
+    display: flex;
+    justify-content: space-between;
+   margin-left: 130px;
+   margin-right: 130px;
+    padding-bottom: 25px;
+    text-align: center; 
+    align-items: center;
+    font-size: clamp(20px, 5vw, 30px);
+}
+
+h3{
+    color: #ffffff;
+}
+.mov{
+    background-color: transparent; 
+    color: #ffffff;
+    border: 2px solid white;
+    padding: 15px 20px;
+    border-radius: 25px;
+}
+.joy,.ask{
+    margin-left: 130px;
+    padding-bottom: 25px;
+    font-size: clamp(20px, 5vw, 30px);
+    padding-top: 20px;
+}
+.join_text{
+    color: #ffffff;
+    display: flex; 
+   justify-content: center;
+   gap: 10px;
+}
+.bor_tx {
+    
+    display: flex;
+    border: 1px solid white;
+    padding: 15px 25px;
+    margin-bottom: 20px; /* Разделение между элементами */
+    border-radius: 15px; /* Радиус для скругления углов рамки */
+    background-color: #242222; /* Светлый фон для лучшей видимости */
+    text-align: left;
+    width: 20vw; /* Увеличиваем ширину блока */
+    height: 12vh;
+    font-size: clamp(20px, 5vw, 14px);
+    
+}
+
+.join_text ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы списка */
+    margin: 0; /* Убираем внешние отступы списка */
+    display: flex;
+    gap: 20px;
+    margin-left: 130px;
+    margin-right: 130px;
+    justify-content: space-between;
+}
+
+.answer_container {
+    display: flex;
+    flex-direction: column; /* Кнопки расположены вертикально */
+    justify-content: center; /* Центрируем кнопки по вертикальной оси */
+    align-items: center; /* Центрируем кнопки по горизонтальной оси */
+    height: 100vh; /* Высота контейнера на весь экран */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.answer {
+    width: 85vw; /* Ширина кнопок */
+    height: 12vh; /* Высота кнопок */
+    text-align: left;
+    border: 1px solid white;
+    background-color: #242222;
+    color: white;
+    border-radius: 15px;
+    margin: 10px 0; /* Промежуток между кнопками */
+    padding: 15px 25px;
+    font-size: clamp(20px, 5vw, 16px);
+    cursor: pointer;
+}
+.answer:hover{
+    background-color: #383737;
+}
+.but-form1{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 20px;  
+    font-weight: 100;
+}
+.join-but{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+   
+}
+.create_j{
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+/* Основной контейнер футера */
+.footer-container {
+    display: flex; /* Flexbox для выравнивания */
+    flex-wrap: wrap; /* Разрешаем перенос элементов */
+    justify-content: center; /* Центрируем списки по горизонтали */
+    align-items: flex-start; /* Выравниваем списки по верхнему краю */
+    gap: 15vw; /* Расстояние между списками */
+    background-color: #000000; /* Тёмный фон футера */
+    color: white; /* Белый текст */
+    padding: 3vh 5vw; /* Отступы внутри футера */
+    text-align: left; /* Выравнивание текста внутри списков */
+}
+
+/* Стили для списков */
+.footer-list {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для ссылок */
+.footer-list li {
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+.footer-list a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: #f5f5f5; /* Светлый цвет текста */
+    font-size: 0.9rem; /* Размер шрифта */
+    transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+.footer-list a:hover {
+    color: #ff0000; /* Цвет ссылок при наведении */
+}
+
+
+.footer-contact {
+    text-decoration: none; /* Подчеркивание по умолчанию */
+    color: #f5f5f5; 
+}
+
+.footer-contact:hover {
+    color: #ff0000; /* Изменение цвета при наведении */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+a {
+    text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+}
+
+
+.trend_img{
+    display: flex; /* Включаем Flexbox */
+    gap: 10px; /* Расстояние между элементами */
+   
+    justify-content: center;
+}
+.item1, .item2, .item3, .item4, .item5, .item6, .item7{
+    width: 200px;
+    height: 300px;
+   border: 1px solid white;
+   border-radius: 25px;
+}
+
+
+
+/* Медиазапросы для адаптивности */
+
+/* Для экрана шириной 1024px и меньше */
+@media (max-width: 1024px) {
+    .logo{
+        display: none;
+       
+    }
+    .header_logo{
+        background-image: url(/img/npng.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: auto;
+    }
+    .img-content {
+        height: 50vh; /* Уменьшаем высоту на планшетах */
+    }
+
+    h2{
+        font-size: clamp(18px, 4vw, 50px); /* Уменьшаем размер шрифта */
+        position: absolute;
+        
+    }
+    .first_parag {
+        font-size: clamp(16px, 2vw, 30px); /* Адаптивный размер шрифта */
+        top: 290px; /* Поднимаем текст выше */
+    }
+    .trend,.joy,.ask{
+        font-size: clamp(20px, 5vw, 20px);
+    }
+    .join_text ul {
+        flex-direction: column; /* Элементы будут располагаться в столбик */
+        align-items: center; /* Центрируем элементы */
+        gap: 5px; /* Промежутки между элементами */
+        width: 100%; /* Расширяем контейнер на всю ширину */
+      
+    }
+    .bor_tx {
+        width: 75vw;
+        height: 15vh;
+        border-radius: 15px;
+        align-items: center;
+    }
+   
+}
+
+/* Для экрана шириной 768px и меньше */
+@media (max-width: 768px) {
+    .logo{
+        display: none;
+       
+    }
+    .header_logo{
+        background-image: url(/img/npng.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100px;
+        height: auto;
+    }
+    .img-content {
+        margin: 0 auto;
+        height: 40vh; /* Еще уменьшаем высоту на мобильных устройствах */
+    }
+
+    h2 {
+        font-size: clamp(16px, 5vw, 45px); /* Размер шрифта уменьшается */
+        position: absolute;
+    }
+    .first_parag {
+        font-size: clamp(14px, 3vw, 30px); /* Ещё меньше текст */
+        top: 210px; /* Двигаем выше для мобильных устройств */
+    }
+    .trend,.joy{
+        font-size: clamp(20px, 5vw, 20px);
+    }
+     .join_text ul {
+        flex-direction: column; /* Элементы будут располагаться в столбик */
+        align-items: center; /* Центрируем элементы */
+        gap: 5px; /* Промежутки между элементами */
+        width: 100%; /* Расширяем контейнер на всю ширину */
+      
+    }
+    .bor_tx {
+        width: 75vw;
+        height: 10vh;
+        border-radius: 15px;
+        align-items: center;
+    }
+    .item1, .item2, .item3, .item4, .item5, .item6, .item7 {
+        width: 30vw; /* Увеличиваем ширину для меньших экранов */
+        height: 40vh; /* Высота увеличивается пропорционально */
+    }
+   
+}
+
+/* Для экрана шириной 480px и меньше */
+@media (max-width: 480px) {
+    .img-content {
+        .logo{
+            display: none;
+           
+        }
+        .header_logo{
+            background-image: url(/img/npng.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 50px;
+            height: auto;
+        }
+        height: 30vh; /* Высота еще меньше для маленьких экранов */
+    }
+
+    h2 {
+        font-size: clamp(14px, 6vw, 40px); /* Очень маленький шрифт для мобильных устройств */
+        position: absolute;
+    
+    }
+    .first_parag, .text-p {
+        font-size: clamp(12px, 3vw, 25px); /* Минимальный размер шрифта */
+        top: 190px; /* Максимально поднимаем текст */
+    }
+    .item1, .item2, .item3, .item4, .item5, .item6, .item7 {
+        width: 40vw; /* Ширина 40% от экрана */
+        height: 50vh; /* Высота 50% от высоты экрана */
+    }
+}

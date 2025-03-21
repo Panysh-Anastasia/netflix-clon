@@ -1,0 +1,110 @@
+*{
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(/img/sign.jpg);
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Высота на весь экран */
+    
+}
+
+.logo{
+    width: 150px;
+    height: 100%;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-container {
+    width: 30vw; /* Ширина формы 30% от ширины экрана */
+    height: auto; /* Высота будет зависеть от содержимого */
+    background-color: black; /* Черный фон */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы внутри формы по вертикали */
+    align-items: center; /* Центрируем элементы внутри формы по горизонтали */
+    border-radius: 10px; /* Слегка закругляем углы */
+    padding: 20px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+/* Заголовок формы */
+.In {
+    color: white; /* Белый текст */
+    font-size: 2rem; /* Размер шрифта */
+    margin-bottom: 30px; /* Отступ снизу */
+}
+
+/* Поля ввода */
+.em_mob, .sig_pas {
+    width: 100%; /* Ширина полей ввода по всей ширине контейнера */
+    padding: 10px;
+    margin-bottom: 20px; /* Отступ снизу */
+    border: 1px solid #ccc; /* Легкая рамка */
+    border-radius: 5px; /* Закругленные углы */
+    background-color: #333; /* Темный фон для полей ввода */
+    color: white; /* Белый цвет текста */
+    font-size: 1rem; /* Размер шрифта */
+}
+
+/* Стили для полей ввода при фокусе */
+.em_mob:focus, .sig_pas:focus {
+    outline: none; /* Убираем стандартную рамку при фокусе */
+    border: 1px solid #fff; /* Белая рамка при фокусе */
+}
+
+.sign_but{
+    width: 100%; /* Ширина полей ввода по всей ширине контейнера */
+    padding: 10px;
+    margin-bottom: 20px; /* Отступ снизу */
+    border: none;
+    border-radius: 5px; /* Закругленные углы */
+    background-color: red;
+    color: white; /* Белый цвет текста */
+    font-size: 1rem; /* Размер шрифта */
+    display: inline-block;
+}
+
+.sign_but:hover{
+    background-color: #9d0000;
+}
+p{
+    color: rgb(133, 127, 127);
+}
+.use_code{
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #313131; 
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 1rem; 
+}
+.use_code:hover{
+    background-color: #444444;
+}
+.pas{
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.pas:hover{
+    text-decoration:underline;
+}
+form{
+    color: white;
+    display: flex;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1rem; 
+}
